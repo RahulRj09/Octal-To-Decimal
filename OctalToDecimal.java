@@ -19,8 +19,15 @@ public class OctalToDecimal {
 
     public static void main(String[] args)
     {
-        int octalNumber = -1;
-        System.out.println(getOctalToDecimal(octalNumber));
+        for(int i =0; i< args.length; i++) {
+            int octalNumber = Integer.parseInt(args[i]);
+            if(args[i].contains("8") || args[i].contains("9")) {
+                System.out.println("invalid input");
+            } else{
+                System.out.println(getOctalToDecimal(octalNumber));
+            }
+        }
+
     }
 
 }
