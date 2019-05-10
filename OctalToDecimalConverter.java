@@ -1,16 +1,18 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class OctalToDecimalConverter {
 
-    static int getOctalToDecimal(int octalNumber)
-    {
-        int decimalNumber = 0;
-        int base = 1;
+    static List<Integer> getDigit(String number){
+        int octalNumber = Integer.parseInt(number);
+        ArrayList<Integer> lastDigitList = new ArrayList<>();
         while (octalNumber != 0) {
             int lastDigit = getLastDigit(octalNumber);
             octalNumber = getOctalNumber(octalNumber);
-            decimalNumber += getDecimalNumber(lastDigit,base);
-            base = base * 8;
+            lastDigitList.add(lastDigit);
         }
-        return decimalNumber;
+        return lastDigitList;
+
     }
 
     static int getLastDigit(int octalNumber){
@@ -21,12 +23,8 @@ public class OctalToDecimalConverter {
         return octalNumber / 10;
     }
 
-    static int getDecimalNumber(int lastDigit,int base){
-        return lastDigit * base;
-    }
-
     static boolean isNotOctal(int octalNumber){
-        return octalNumber== 8 || octalNumber == 9;
+        return octalNumber == 8 || octalNumber == 9;
     }
 
     public static void main(String[] args)
@@ -34,9 +32,14 @@ public class OctalToDecimalConverter {
         int octalNumber = Integer.parseInt(args[0]);
         if(isNotOctal(octalNumber)) {
             System.out.println("invalid input");
-        } else{
-            System.out.println(getOctalToDecimal(octalNumber));
+            return;
         }
+        int i = 0, decimalNumber = 0, base = 8;
+        for(Integer digit :getDigit(args[0])){
+            decimalNumber += digit * ((int) (Math.pow(base, i)));
+            i++;
+        }
+          System.out.println(decimalNumber);
     }
 }
 
