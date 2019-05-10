@@ -1,26 +1,15 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class OctalToDecimalConverter {
 
-    static ArrayList<Integer> getDigit(String number){
-
-       int octalNumber = Integer.parseInt(number);
-        ArrayList<Integer> lastDigitList = new ArrayList<>();
-        while (octalNumber != 0) {
-            int lastDigit = getLastDigit(octalNumber);
-            octalNumber = getOctalNumber(octalNumber);
-            lastDigitList.add(lastDigit);
+    static ArrayList<Integer> getDigit(String number) {
+        List<Integer> listOfLastDigit = new ArrayList<>();
+        String[] arrOfStr = number.split("");
+        for (int i = arrOfStr.length; i > 0; i--) {
+            listOfLastDigit.add(Integer.valueOf(arrOfStr[i - 1]));
         }
-        return lastDigitList;
-
-    }
-
-    static int getLastDigit(int octalNumber){
-        return octalNumber % 10;
-    }
-
-    static int getOctalNumber(int octalNumber){
-        return octalNumber / 10;
+        return (ArrayList<Integer>) listOfLastDigit;
     }
 
     static boolean isNotOctal(int octalNumber){
@@ -40,15 +29,6 @@ public class OctalToDecimalConverter {
             i++;
         }
           System.out.println(decimalNumber);
-        // split userInput using split function
-        //start split code
-        String[] arrOfStr = args[0].split("");
-        for (int j = 0; j<arrOfStr.length; j++) {
-            System.out.println(arrOfStr[j]);
-
-        }
-        //end split code
-
     }
 }
 
