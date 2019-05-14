@@ -22,6 +22,14 @@ public class BaseConverter {
         return false;
     }
 
+    static int getDotProduct(List<Integer> x, List<Integer> y){
+        int product = 0;
+        for (int i = 0; i < x.size() ; i++) {
+            product += x.get(i)*y.get(i);
+        }
+        return product;
+    }
+
     public static void main(String[] args)
     {
         int base = Integer.parseInt(args[1]);
@@ -29,12 +37,17 @@ public class BaseConverter {
             System.out.println("invalid input");
             return;
         }
-        int i = 0, decimalNumber = 0;
-        for(Integer digit :getDigits(args[2])){
-            decimalNumber += digit * ((int) (Math.pow(base, i)));
-            i++;
+        int decimalNumber = 0;
+        List<Integer> powers = new ArrayList<>();
+        List<Integer> digits = getDigits(args[2]);
+
+        for(int i = 0;i < digits.size(); i++){
+            int power =  ((int) (Math.pow(base, i)));
+            powers.add(power);
         }
-          System.out.println(decimalNumber);
+
+        decimalNumber= getDotProduct(powers,digits);
+        System.out.println(decimalNumber);
     }
 }
 
