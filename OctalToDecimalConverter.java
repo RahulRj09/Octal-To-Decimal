@@ -20,8 +20,8 @@ public class OctalToDecimalConverter {
     public static void main(String[] args)
     {
         int base = Integer.parseInt(args[1]);
-        int octalNumber = Integer.parseInt(args[2]);
-        if(isNotOctal(octalNumber)) {
+        int number = Integer.parseInt(args[2]);
+        if(isNotOctal(number)) {
             System.out.println("invalid input");
             return;
         }
