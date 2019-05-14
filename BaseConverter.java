@@ -13,15 +13,19 @@ public class BaseConverter {
         return digitOfNumber;
     }
 
-    static boolean isNumberNotValid(int octalNumber){
-        return octalNumber == 8 || octalNumber == 9;
+    static boolean isNumberNotValid(String number,int base){
+        for(int digit: getDigits(number)) {
+          if(base <= digit){
+              return true;
+          }
+        }
+        return false;
     }
 
     public static void main(String[] args)
     {
         int base = Integer.parseInt(args[1]);
-        int number = Integer.parseInt(args[2]);
-        if(isNumberNotValid(number)) {
+        if(isNumberNotValid(args[2],base)) {
             System.out.println("invalid input");
             return;
         }
