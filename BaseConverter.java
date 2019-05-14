@@ -48,7 +48,7 @@ public class BaseConverter {
         }
         List<Integer> digits = getDigits(args[2]);
         List<Integer> powers = getPowers(digits.size(),base);
-        System.out.println(getDotProduct(powers,digits));
+        System.out.println(DotProductCalculator.getDotProduct(powers,digits));
     }
 }
 
