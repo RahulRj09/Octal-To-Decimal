@@ -13,7 +13,7 @@ public class BaseConverter {
         return digitOfNumber;
     }
 
-    static boolean isNotOctal(int octalNumber){
+    static boolean isNumberNotValid(int octalNumber){
         return octalNumber == 8 || octalNumber == 9;
     }
 
@@ -21,7 +21,7 @@ public class BaseConverter {
     {
         int base = Integer.parseInt(args[1]);
         int number = Integer.parseInt(args[2]);
-        if(isNotOctal(number)) {
+        if(isNumberNotValid(number)) {
             System.out.println("invalid input");
             return;
         }
