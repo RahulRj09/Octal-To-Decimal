@@ -22,23 +22,6 @@ public class BaseConverter {
         return false;
     }
 
-    static int getDotProduct(List<Integer> x, List<Integer> y){
-        int product = 0;
-        for (int i = 0; i < x.size() ; i++) {
-            product += x.get(i)*y.get(i);
-        }
-        return product;
-    }
-
-    static List<Integer> getPowers(int size,int base){
-        List<Integer> powers = new ArrayList<>();
-        for(int i = 0;i < size; i++){
-            int power =  ((int) (Math.pow(base, i)));
-            powers.add(power);
-        }
-        return powers;
-    }
-
     public static void main(String[] args)
     {
         int base = Integer.parseInt(args[1]);
@@ -47,7 +30,7 @@ public class BaseConverter {
             return;
         }
         List<Integer> digits = getDigits(args[2]);
-        List<Integer> powers = getPowers(digits.size(),base);
+        List<Integer> powers = GetPowers.getPowers(digits.size(),base);
         System.out.println(DotProductCalculator.getDotProduct(powers,digits));
     }
 }
