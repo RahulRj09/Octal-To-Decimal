@@ -19,13 +19,14 @@ public class OctalToDecimalConverter {
 
     public static void main(String[] args)
     {
-        int octalNumber = Integer.parseInt(args[0]);
+        int base = Integer.parseInt(args[1]);
+        int octalNumber = Integer.parseInt(args[2]);
         if(isNotOctal(octalNumber)) {
             System.out.println("invalid input");
             return;
         }
-        int i = 0, decimalNumber = 0, base = 8;
-        for(Integer digit :getDigits(args[0])){
+        int i = 0, decimalNumber = 0;
+        for(Integer digit :getDigits(args[2])){
             decimalNumber += digit * ((int) (Math.pow(base, i)));
             i++;
         }
