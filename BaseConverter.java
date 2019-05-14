@@ -1,20 +1,12 @@
-import java.util.ArrayList;
+import com.rahul.converter.DotProductCalculator;
+import com.rahul.converter.GetDigits;
+import com.rahul.converter.GetPowers;
+
 import java.util.List;
 
 public class BaseConverter {
-
-    static List<Integer> getDigits(String octalNumber) {
-        List<Integer> digitOfNumber = new ArrayList<>();
-        String[] splitOctalNUmber = octalNumber.split("");
-        for (int i = splitOctalNUmber.length; i > 0; i--) {
-            digitOfNumber.add(Integer.valueOf(splitOctalNUmber[i - 1]));
-
-        }
-        return digitOfNumber;
-    }
-
     static boolean isNumberNotValid(String number,int base){
-        for(int digit: getDigits(number)) {
+        for(int digit: GetDigits.getDigits(number)) {
           if(base <= digit){
               return true;
           }
@@ -29,7 +21,7 @@ public class BaseConverter {
             System.out.println("invalid input");
             return;
         }
-        List<Integer> digits = getDigits(args[2]);
+        List<Integer> digits = GetDigits.getDigits(args[2]);
         List<Integer> powers = GetPowers.getPowers(digits.size(),base);
         System.out.println(DotProductCalculator.getDotProduct(powers,digits));
     }
