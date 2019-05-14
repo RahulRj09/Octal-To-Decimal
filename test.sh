@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-javac OctalToDecimalConverter.java
-java OctalToDecimalConverter --base 8 67 > actual
+javac BaseConverter.java
+java BaseConverter --base 8 67 > actual
 diff actual expectedOutput55
-java OctalToDecimalConverter --base 8 1 > actual
+java BaseConverter --base 8 1 > actual
 diff actual expectedOutput1
-java OctalToDecimalConverter --base 8 9 > actual
+java BaseConverter --base 8 9 > actual
 diff actual expectedOutput9

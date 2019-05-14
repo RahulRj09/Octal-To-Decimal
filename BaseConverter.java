@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class OctalToDecimalConverter {
+public class BaseConverter {
 
     static List<Integer> getDigits(String octalNumber) {
         List<Integer> digitOfNumber = new ArrayList<>();
