@@ -30,6 +30,15 @@ public class BaseConverter {
         return product;
     }
 
+    static List<Integer> getPowers(int size,int base){
+        List<Integer> powers = new ArrayList<>();
+        for(int i = 0;i < size; i++){
+            int power =  ((int) (Math.pow(base, i)));
+            powers.add(power);
+        }
+        return powers;
+    }
+
     public static void main(String[] args)
     {
         int base = Integer.parseInt(args[1]);
@@ -37,17 +46,9 @@ public class BaseConverter {
             System.out.println("invalid input");
             return;
         }
-        int decimalNumber = 0;
-        List<Integer> powers = new ArrayList<>();
         List<Integer> digits = getDigits(args[2]);
-
-        for(int i = 0;i < digits.size(); i++){
-            int power =  ((int) (Math.pow(base, i)));
-            powers.add(power);
-        }
-
-        decimalNumber= getDotProduct(powers,digits);
-        System.out.println(decimalNumber);
+        List<Integer> powers = getPowers(digits.size(),base);
+        System.out.println(getDotProduct(powers,digits));
     }
 }
 
