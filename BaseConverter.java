@@ -19,7 +19,7 @@ public class BaseConverter {
             System.out.println("invalid input");
             return;
         }
-        List<Integer> digits = GetDigits.getDigits(args[2]);
+        List<Integer> digits = GetDigits.getDigits(parseing.number);
         List<Integer> powers = GetPowers.getPowers(digits.size(),base);
         System.out.println(DotProductCalculator.getDotProduct(powers,digits));
     }
