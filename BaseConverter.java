@@ -1,7 +1,4 @@
-import com.rahul.converter.DotProductCalculator;
-import com.rahul.converter.GetDigits;
-import com.rahul.converter.GetPowers;
-
+import com.rahul.converter. *;
 import java.util.List;
 
 public class BaseConverter {
@@ -16,8 +13,9 @@ public class BaseConverter {
 
     public static void main(String[] args)
     {
-        int base = Integer.parseInt(args[1]);
-        if(isNumberNotValid(args[2],base)) {
+        ParseResult parseing = new ParseResult(args);
+        int base = parseing.fromBase;
+        if(isNumberNotValid(parseing.number,base)) {
             System.out.println("invalid input");
             return;
         }
