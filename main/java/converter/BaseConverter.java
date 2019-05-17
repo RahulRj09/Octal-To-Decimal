@@ -1,4 +1,4 @@
-import com.rahul.converter. *;
+package converter;
 import java.util.List;
 
 public class BaseConverter {
@@ -21,8 +21,9 @@ public class BaseConverter {
         }
         List<Integer> digits = GetDigits.getDigits(parseing.number);
         List<Integer> powers = GetPowers.getPowers(digits.size(),base);
+        System.out.println(powers);
         List<Integer> products = GetProduct.getProduct(powers,digits);
-        System.out.println(SumOfList.sumOflist(products));
+        System.out.println(SumOfList.sumOfList(products));
     }
 }
 

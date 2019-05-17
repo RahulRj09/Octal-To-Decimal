@@ -1,6 +1,8 @@
-package com.rahul.converter;
+package converter;
 
-public class ParseResult {
+public class
+
+ParseResult {
     public int fromBase,toBase;
     public String number;
 
