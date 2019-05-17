@@ -21,7 +21,8 @@ public class BaseConverter {
         }
         List<Integer> digits = GetDigits.getDigits(parseing.number);
         List<Integer> powers = GetPowers.getPowers(digits.size(),base);
-        System.out.println(DotProductCalculator.getDotProduct(powers,digits));
+        List<Integer> products = GetProduct.getProduct(powers,digits);
+        System.out.println(SumOfList.sumOflist(products));
     }
 }
 
