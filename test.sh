@@ -9,4 +9,4 @@ diff actual expectedOutput5forbase2
 java BaseConverter --base 8 9 > actual
 diff actual expectedOutput9forbase8
 java BaseConverter 10 > actual
-diff actual expectedOutput10
+diff actual expectedOutput8
