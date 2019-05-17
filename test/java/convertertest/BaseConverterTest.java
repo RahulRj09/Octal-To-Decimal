@@ -3,9 +3,7 @@ import converter.*;
 import org.junit.Test;
 import java.util.Arrays;
 import java.util.List;
-
 import static org.junit.Assert.*;
-
 public class BaseConverterTest {
     @Test
     public void givenNumberShouldBeAConvertOrNot() {
@@ -32,5 +30,11 @@ public class BaseConverterTest {
     public void theListShouldBeGivePowersOfEight(){
         List<Integer> expected = Arrays.asList(1,8,64);
         assertEquals(expected, GetPowers.getPowers(3,8));
+    }
+    @Test
+    public void theListShouldBeAGiveWrongAnswerSumOfList(){
+        List<Integer> product = Arrays.asList(6,20,50);
+        assertNotEquals(75, SumOfList.sumOfList(product));
+
     }
 }
