@@ -6,20 +6,16 @@ import java.util.List;
 import static org.junit.Assert.*;
 public class BaseConverterTest {
     @Test
-    public void givenNumberShouldBeAConvertOrNot() {
-        BaseConverter.main(new String[] {"--base","8","123"});
-    }
-    @Test
-    public void theListShouldBeAGiveProductBothLists(){
-        List<Integer> digitsList = Arrays.asList(3,4,5);
-        List<Integer> powersList = Arrays.asList(2,5,10);
+    public void theListShouldDoElementWiseMultiplication(){
+        List<Integer> x = Arrays.asList(3,4,5);
+        List<Integer> y = Arrays.asList(2,5,10);
         List<Integer> expected = Arrays.asList(6,20,50);
-        assertEquals(expected, GetProduct.getProduct(digitsList,powersList));
+        assertEquals(expected, GetProduct.getProduct(x,y));
     }
     @Test
-    public void theListShouldBeAGiveSumOfList(){
-        List<Integer> product = Arrays.asList(6,20,50);
-        assertEquals(76, SumOfList.sumOfList(product));
+    public void theListShouldBeAbleSumOfList(){
+        List<Integer> sum = Arrays.asList(1,2,3);
+        assertEquals(6, SumOfList.sumOfList(sum));
     }
     @Test
     public void theListShouldBeASplitTheNumbersAndGiveLIstOfNUmbers(){
@@ -30,11 +26,5 @@ public class BaseConverterTest {
     public void theListShouldBeGivePowersOfEight(){
         List<Integer> expected = Arrays.asList(1,8,64);
         assertEquals(expected, GetPowers.getPowers(3,8));
-    }
-    @Test
-    public void theListShouldBeAGiveWrongAnswerSumOfList(){
-        List<Integer> product = Arrays.asList(6,20,50);
-        assertNotEquals(75, SumOfList.sumOfList(product));
-
     }
 }
